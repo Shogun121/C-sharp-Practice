@@ -113,6 +113,17 @@ namespace CsharpPractice
                 characterStatOutputLabel.Text = "Poverty bio " + " stats/perks";
             }
         }
+        /// <summary>
+        /// Control Group to keep track of Primary Stat changes and evetual extra point
+        /// distribution
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void primaryStatGroupBox_Enter(object sender, EventArgs e)
+        {
+            //TO DO :Make responsive to creation selections.
+            //TO DO :Notify user that they have 'point(s)' to spend on their 'primary' stats.
+        }
     }
 }
 /**
@@ -120,4 +131,8 @@ namespace CsharpPractice
  * 1)Configure Radio Buttons to account for cross selection within same groupbox 
  *  i.e. User selecting Human and it displaying, then selecting Dwarf. LOOK INTO FIXING THAT PROBLEM
  * 2)Develope Creation choices, be more orginal.
+ * 3)Format output display
+ *  i.e Human gets +2 Spirit.
+ * 4)Add stat column to display stat changes, but also to allow stat rolls.
+ * 5)Maybe add pictureboxes for when radiobuttons are checked.
  * */

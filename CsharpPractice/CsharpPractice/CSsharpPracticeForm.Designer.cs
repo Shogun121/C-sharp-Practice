@@ -44,9 +44,17 @@
             this.upbringing3RadioButton = new System.Windows.Forms.RadioButton();
             this.characterStatOutputHeaderLabel = new System.Windows.Forms.Label();
             this.characterStatOutputLabel = new System.Windows.Forms.Label();
+            this.primaryStatGroupBox = new System.Windows.Forms.GroupBox();
+            this.priStatNameLabel = new System.Windows.Forms.Label();
+            this.priStat2NameLabel = new System.Windows.Forms.Label();
+            this.priStat3NameLabel = new System.Windows.Forms.Label();
+            this.priStatOutputLabel = new System.Windows.Forms.Label();
+            this.priStat2OutputLabel = new System.Windows.Forms.Label();
+            this.priStat3OutputLabel = new System.Windows.Forms.Label();
             this.raceGroupBox.SuspendLayout();
             this.factionGroupBox.SuspendLayout();
             this.upbringingGroupBox.SuspendLayout();
+            this.primaryStatGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // newCharacterHeaderLabel
@@ -221,11 +229,82 @@
             this.characterStatOutputLabel.Size = new System.Drawing.Size(84, 97);
             this.characterStatOutputLabel.TabIndex = 6;
             // 
+            // primaryStatGroupBox
+            // 
+            this.primaryStatGroupBox.Controls.Add(this.priStat3OutputLabel);
+            this.primaryStatGroupBox.Controls.Add(this.priStat2OutputLabel);
+            this.primaryStatGroupBox.Controls.Add(this.priStatOutputLabel);
+            this.primaryStatGroupBox.Controls.Add(this.priStat3NameLabel);
+            this.primaryStatGroupBox.Controls.Add(this.priStat2NameLabel);
+            this.primaryStatGroupBox.Controls.Add(this.priStatNameLabel);
+            this.primaryStatGroupBox.Location = new System.Drawing.Point(133, 34);
+            this.primaryStatGroupBox.Name = "primaryStatGroupBox";
+            this.primaryStatGroupBox.Size = new System.Drawing.Size(116, 100);
+            this.primaryStatGroupBox.TabIndex = 7;
+            this.primaryStatGroupBox.TabStop = false;
+            this.primaryStatGroupBox.Text = "Primary Stats";
+            this.primaryStatGroupBox.Enter += new System.EventHandler(this.primaryStatGroupBox_Enter);
+            // 
+            // priStatNameLabel
+            // 
+            this.priStatNameLabel.AutoSize = true;
+            this.priStatNameLabel.Location = new System.Drawing.Point(9, 20);
+            this.priStatNameLabel.Name = "priStatNameLabel";
+            this.priStatNameLabel.Size = new System.Drawing.Size(47, 13);
+            this.priStatNameLabel.TabIndex = 0;
+            this.priStatNameLabel.Text = "Strength";
+            // 
+            // priStat2NameLabel
+            // 
+            this.priStat2NameLabel.AutoSize = true;
+            this.priStat2NameLabel.Location = new System.Drawing.Point(9, 45);
+            this.priStat2NameLabel.Name = "priStat2NameLabel";
+            this.priStat2NameLabel.Size = new System.Drawing.Size(34, 13);
+            this.priStat2NameLabel.TabIndex = 1;
+            this.priStat2NameLabel.Text = "Agility";
+            // 
+            // priStat3NameLabel
+            // 
+            this.priStat3NameLabel.AutoSize = true;
+            this.priStat3NameLabel.Location = new System.Drawing.Point(9, 70);
+            this.priStat3NameLabel.Name = "priStat3NameLabel";
+            this.priStat3NameLabel.Size = new System.Drawing.Size(44, 13);
+            this.priStat3NameLabel.TabIndex = 2;
+            this.priStat3NameLabel.Text = "Intellect";
+            // 
+            // priStatOutputLabel
+            // 
+            this.priStatOutputLabel.AutoSize = true;
+            this.priStatOutputLabel.Location = new System.Drawing.Point(94, 20);
+            this.priStatOutputLabel.Name = "priStatOutputLabel";
+            this.priStatOutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.priStatOutputLabel.TabIndex = 3;
+            this.priStatOutputLabel.Text = "0";
+            // 
+            // priStat2OutputLabel
+            // 
+            this.priStat2OutputLabel.AutoSize = true;
+            this.priStat2OutputLabel.Location = new System.Drawing.Point(94, 45);
+            this.priStat2OutputLabel.Name = "priStat2OutputLabel";
+            this.priStat2OutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.priStat2OutputLabel.TabIndex = 4;
+            this.priStat2OutputLabel.Text = "0";
+            // 
+            // priStat3OutputLabel
+            // 
+            this.priStat3OutputLabel.AutoSize = true;
+            this.priStat3OutputLabel.Location = new System.Drawing.Point(94, 68);
+            this.priStat3OutputLabel.Name = "priStat3OutputLabel";
+            this.priStat3OutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.priStat3OutputLabel.TabIndex = 5;
+            this.priStat3OutputLabel.Text = "0";
+            // 
             // CSsharpPracticeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 434);
+            this.Controls.Add(this.primaryStatGroupBox);
             this.Controls.Add(this.characterStatOutputLabel);
             this.Controls.Add(this.characterStatOutputHeaderLabel);
             this.Controls.Add(this.upbringingGroupBox);
@@ -243,6 +322,8 @@
             this.factionGroupBox.PerformLayout();
             this.upbringingGroupBox.ResumeLayout(false);
             this.upbringingGroupBox.PerformLayout();
+            this.primaryStatGroupBox.ResumeLayout(false);
+            this.primaryStatGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,6 +347,13 @@
         private System.Windows.Forms.RadioButton upbringing1RadioButton;
         private System.Windows.Forms.Label characterStatOutputHeaderLabel;
         private System.Windows.Forms.Label characterStatOutputLabel;
+        private System.Windows.Forms.GroupBox primaryStatGroupBox;
+        private System.Windows.Forms.Label priStat2NameLabel;
+        private System.Windows.Forms.Label priStatNameLabel;
+        private System.Windows.Forms.Label priStat3OutputLabel;
+        private System.Windows.Forms.Label priStat2OutputLabel;
+        private System.Windows.Forms.Label priStatOutputLabel;
+        private System.Windows.Forms.Label priStat3NameLabel;
     }
 }
 
