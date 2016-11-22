@@ -42,6 +42,8 @@
             this.upbringing1RadioButton = new System.Windows.Forms.RadioButton();
             this.upbringing2RadioButton = new System.Windows.Forms.RadioButton();
             this.upbringing3RadioButton = new System.Windows.Forms.RadioButton();
+            this.characterStatOutputHeaderLabel = new System.Windows.Forms.Label();
+            this.characterStatOutputLabel = new System.Windows.Forms.Label();
             this.raceGroupBox.SuspendLayout();
             this.factionGroupBox.SuspendLayout();
             this.upbringingGroupBox.SuspendLayout();
@@ -61,7 +63,7 @@
             this.exitButton.Location = new System.Drawing.Point(12, 414);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 1;
+            this.exitButton.TabIndex = 4;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -74,9 +76,10 @@
             this.raceGroupBox.Location = new System.Drawing.Point(13, 34);
             this.raceGroupBox.Name = "raceGroupBox";
             this.raceGroupBox.Size = new System.Drawing.Size(100, 89);
-            this.raceGroupBox.TabIndex = 2;
+            this.raceGroupBox.TabIndex = 0;
             this.raceGroupBox.TabStop = false;
-            this.raceGroupBox.Text = "Races";
+            this.raceGroupBox.Text = "R&aces";
+            this.raceGroupBox.Enter += new System.EventHandler(this.raceGroupBox_Enter);
             // 
             // race1RadioButton
             // 
@@ -116,9 +119,10 @@
             this.clanGroupBox.Location = new System.Drawing.Point(13, 130);
             this.clanGroupBox.Name = "clanGroupBox";
             this.clanGroupBox.Size = new System.Drawing.Size(100, 100);
-            this.clanGroupBox.TabIndex = 3;
+            this.clanGroupBox.TabIndex = 1;
             this.clanGroupBox.TabStop = false;
-            this.clanGroupBox.Text = "Sect/Clan ";
+            this.clanGroupBox.Text = "S&ect/Clan ";
+            this.clanGroupBox.Enter += new System.EventHandler(this.clanGroupBox_Enter);
             // 
             // factionGroupBox
             // 
@@ -127,9 +131,10 @@
             this.factionGroupBox.Location = new System.Drawing.Point(13, 237);
             this.factionGroupBox.Name = "factionGroupBox";
             this.factionGroupBox.Size = new System.Drawing.Size(99, 64);
-            this.factionGroupBox.TabIndex = 4;
+            this.factionGroupBox.TabIndex = 2;
             this.factionGroupBox.TabStop = false;
-            this.factionGroupBox.Text = "Faction";
+            this.factionGroupBox.Text = "&Faction";
+            this.factionGroupBox.Enter += new System.EventHandler(this.factionGroupBox_Enter);
             // 
             // faction1RadioButton
             // 
@@ -161,9 +166,10 @@
             this.upbringingGroupBox.Location = new System.Drawing.Point(13, 308);
             this.upbringingGroupBox.Name = "upbringingGroupBox";
             this.upbringingGroupBox.Size = new System.Drawing.Size(99, 100);
-            this.upbringingGroupBox.TabIndex = 5;
+            this.upbringingGroupBox.TabIndex = 3;
             this.upbringingGroupBox.TabStop = false;
             this.upbringingGroupBox.Text = "Upbringing";
+            this.upbringingGroupBox.Enter += new System.EventHandler(this.upbringingGroupBox_Enter);
             // 
             // upbringing1RadioButton
             // 
@@ -198,11 +204,30 @@
             this.upbringing3RadioButton.Text = "Poverty";
             this.upbringing3RadioButton.UseVisualStyleBackColor = true;
             // 
+            // characterStatOutputHeaderLabel
+            // 
+            this.characterStatOutputHeaderLabel.AutoSize = true;
+            this.characterStatOutputHeaderLabel.Location = new System.Drawing.Point(304, 308);
+            this.characterStatOutputHeaderLabel.Name = "characterStatOutputHeaderLabel";
+            this.characterStatOutputHeaderLabel.Size = new System.Drawing.Size(87, 13);
+            this.characterStatOutputHeaderLabel.TabIndex = 5;
+            this.characterStatOutputHeaderLabel.Text = "Character\'s Stats";
+            // 
+            // characterStatOutputLabel
+            // 
+            this.characterStatOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.characterStatOutputLabel.Location = new System.Drawing.Point(307, 328);
+            this.characterStatOutputLabel.Name = "characterStatOutputLabel";
+            this.characterStatOutputLabel.Size = new System.Drawing.Size(84, 97);
+            this.characterStatOutputLabel.TabIndex = 6;
+            // 
             // CSsharpPracticeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 434);
+            this.Controls.Add(this.characterStatOutputLabel);
+            this.Controls.Add(this.characterStatOutputHeaderLabel);
             this.Controls.Add(this.upbringingGroupBox);
             this.Controls.Add(this.factionGroupBox);
             this.Controls.Add(this.clanGroupBox);
@@ -211,6 +236,7 @@
             this.Controls.Add(this.newCharacterHeaderLabel);
             this.Name = "CSsharpPracticeForm";
             this.Text = "Character Creation";
+            this.Load += new System.EventHandler(this.CSsharpPracticeForm_Load);
             this.raceGroupBox.ResumeLayout(false);
             this.raceGroupBox.PerformLayout();
             this.factionGroupBox.ResumeLayout(false);
@@ -238,6 +264,8 @@
         private System.Windows.Forms.RadioButton upbringing3RadioButton;
         private System.Windows.Forms.RadioButton upbringing2RadioButton;
         private System.Windows.Forms.RadioButton upbringing1RadioButton;
+        private System.Windows.Forms.Label characterStatOutputHeaderLabel;
+        private System.Windows.Forms.Label characterStatOutputLabel;
     }
 }
 
