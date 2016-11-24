@@ -31,27 +31,33 @@
             this.newCharacterHeaderLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.raceGroupBox = new System.Windows.Forms.GroupBox();
-            this.race1RadioButton = new System.Windows.Forms.RadioButton();
-            this.race2RadioButton = new System.Windows.Forms.RadioButton();
             this.race3RadioButton = new System.Windows.Forms.RadioButton();
+            this.race2RadioButton = new System.Windows.Forms.RadioButton();
+            this.race1RadioButton = new System.Windows.Forms.RadioButton();
             this.clanGroupBox = new System.Windows.Forms.GroupBox();
+            this.clan3RadioButton = new System.Windows.Forms.RadioButton();
+            this.clan2RadioButton = new System.Windows.Forms.RadioButton();
+            this.clan1RadioButton = new System.Windows.Forms.RadioButton();
             this.factionGroupBox = new System.Windows.Forms.GroupBox();
-            this.faction1RadioButton = new System.Windows.Forms.RadioButton();
             this.faction2RadioButton = new System.Windows.Forms.RadioButton();
+            this.faction1RadioButton = new System.Windows.Forms.RadioButton();
             this.upbringingGroupBox = new System.Windows.Forms.GroupBox();
-            this.upbringing1RadioButton = new System.Windows.Forms.RadioButton();
-            this.upbringing2RadioButton = new System.Windows.Forms.RadioButton();
             this.upbringing3RadioButton = new System.Windows.Forms.RadioButton();
+            this.upbringing2RadioButton = new System.Windows.Forms.RadioButton();
+            this.upbringing1RadioButton = new System.Windows.Forms.RadioButton();
             this.characterStatOutputHeaderLabel = new System.Windows.Forms.Label();
             this.characterStatOutputLabel = new System.Windows.Forms.Label();
             this.primaryStatGroupBox = new System.Windows.Forms.GroupBox();
-            this.priStatNameLabel = new System.Windows.Forms.Label();
-            this.priStat2NameLabel = new System.Windows.Forms.Label();
-            this.priStat3NameLabel = new System.Windows.Forms.Label();
-            this.priStatOutputLabel = new System.Windows.Forms.Label();
-            this.priStat2OutputLabel = new System.Windows.Forms.Label();
             this.priStat3OutputLabel = new System.Windows.Forms.Label();
+            this.priStat2OutputLabel = new System.Windows.Forms.Label();
+            this.priStatOutputLabel = new System.Windows.Forms.Label();
+            this.priStat3NameLabel = new System.Windows.Forms.Label();
+            this.priStat2NameLabel = new System.Windows.Forms.Label();
+            this.priStatNameLabel = new System.Windows.Forms.Label();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.proceedButton = new System.Windows.Forms.Button();
             this.raceGroupBox.SuspendLayout();
+            this.clanGroupBox.SuspendLayout();
             this.factionGroupBox.SuspendLayout();
             this.upbringingGroupBox.SuspendLayout();
             this.primaryStatGroupBox.SuspendLayout();
@@ -71,7 +77,7 @@
             this.exitButton.Location = new System.Drawing.Point(12, 414);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 4;
+            this.exitButton.TabIndex = 5;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -84,53 +90,95 @@
             this.raceGroupBox.Location = new System.Drawing.Point(13, 34);
             this.raceGroupBox.Name = "raceGroupBox";
             this.raceGroupBox.Size = new System.Drawing.Size(100, 89);
-            this.raceGroupBox.TabIndex = 0;
+            this.raceGroupBox.TabIndex = 1;
             this.raceGroupBox.TabStop = false;
-            this.raceGroupBox.Text = "R&aces";
+            this.raceGroupBox.Text = "R&ace";
             this.raceGroupBox.Enter += new System.EventHandler(this.raceGroupBox_Enter);
-            // 
-            // race1RadioButton
-            // 
-            this.race1RadioButton.AutoSize = true;
-            this.race1RadioButton.Location = new System.Drawing.Point(7, 20);
-            this.race1RadioButton.Name = "race1RadioButton";
-            this.race1RadioButton.Size = new System.Drawing.Size(59, 17);
-            this.race1RadioButton.TabIndex = 0;
-            this.race1RadioButton.TabStop = true;
-            this.race1RadioButton.Text = "Human";
-            this.race1RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // race2RadioButton
-            // 
-            this.race2RadioButton.AutoSize = true;
-            this.race2RadioButton.Location = new System.Drawing.Point(7, 44);
-            this.race2RadioButton.Name = "race2RadioButton";
-            this.race2RadioButton.Size = new System.Drawing.Size(53, 17);
-            this.race2RadioButton.TabIndex = 1;
-            this.race2RadioButton.TabStop = true;
-            this.race2RadioButton.Text = "Dwarf";
-            this.race2RadioButton.UseVisualStyleBackColor = true;
             // 
             // race3RadioButton
             // 
             this.race3RadioButton.AutoSize = true;
             this.race3RadioButton.Location = new System.Drawing.Point(7, 68);
             this.race3RadioButton.Name = "race3RadioButton";
-            this.race3RadioButton.Size = new System.Drawing.Size(37, 17);
+            this.race3RadioButton.Size = new System.Drawing.Size(57, 17);
             this.race3RadioButton.TabIndex = 2;
             this.race3RadioButton.TabStop = true;
-            this.race3RadioButton.Text = "Elf";
+            this.race3RadioButton.Text = "Race3";
             this.race3RadioButton.UseVisualStyleBackColor = true;
+            this.race3RadioButton.CheckedChanged += new System.EventHandler(this.race3RadioButton_CheckedChanged);
+            // 
+            // race2RadioButton
+            // 
+            this.race2RadioButton.AutoSize = true;
+            this.race2RadioButton.Location = new System.Drawing.Point(7, 44);
+            this.race2RadioButton.Name = "race2RadioButton";
+            this.race2RadioButton.Size = new System.Drawing.Size(57, 17);
+            this.race2RadioButton.TabIndex = 1;
+            this.race2RadioButton.TabStop = true;
+            this.race2RadioButton.Text = "Race2";
+            this.race2RadioButton.UseVisualStyleBackColor = true;
+            this.race2RadioButton.CheckedChanged += new System.EventHandler(this.race2RadioButton_CheckedChanged);
+            // 
+            // race1RadioButton
+            // 
+            this.race1RadioButton.AutoSize = true;
+            this.race1RadioButton.Location = new System.Drawing.Point(7, 20);
+            this.race1RadioButton.Name = "race1RadioButton";
+            this.race1RadioButton.Size = new System.Drawing.Size(57, 17);
+            this.race1RadioButton.TabIndex = 0;
+            this.race1RadioButton.TabStop = true;
+            this.race1RadioButton.Text = "Race1";
+            this.race1RadioButton.UseVisualStyleBackColor = true;
+            this.race1RadioButton.CheckedChanged += new System.EventHandler(this.race1RadioButton_CheckedChanged);
             // 
             // clanGroupBox
             // 
+            this.clanGroupBox.Controls.Add(this.clan3RadioButton);
+            this.clanGroupBox.Controls.Add(this.clan2RadioButton);
+            this.clanGroupBox.Controls.Add(this.clan1RadioButton);
             this.clanGroupBox.Location = new System.Drawing.Point(13, 130);
             this.clanGroupBox.Name = "clanGroupBox";
             this.clanGroupBox.Size = new System.Drawing.Size(100, 100);
-            this.clanGroupBox.TabIndex = 1;
+            this.clanGroupBox.TabIndex = 2;
             this.clanGroupBox.TabStop = false;
             this.clanGroupBox.Text = "S&ect/Clan ";
             this.clanGroupBox.Enter += new System.EventHandler(this.clanGroupBox_Enter);
+            // 
+            // clan3RadioButton
+            // 
+            this.clan3RadioButton.AutoSize = true;
+            this.clan3RadioButton.Location = new System.Drawing.Point(7, 68);
+            this.clan3RadioButton.Name = "clan3RadioButton";
+            this.clan3RadioButton.Size = new System.Drawing.Size(52, 17);
+            this.clan3RadioButton.TabIndex = 2;
+            this.clan3RadioButton.TabStop = true;
+            this.clan3RadioButton.Text = "Clan3";
+            this.clan3RadioButton.UseVisualStyleBackColor = true;
+            this.clan3RadioButton.CheckedChanged += new System.EventHandler(this.clan3RadioButton_CheckedChanged);
+            // 
+            // clan2RadioButton
+            // 
+            this.clan2RadioButton.AutoSize = true;
+            this.clan2RadioButton.Location = new System.Drawing.Point(7, 44);
+            this.clan2RadioButton.Name = "clan2RadioButton";
+            this.clan2RadioButton.Size = new System.Drawing.Size(52, 17);
+            this.clan2RadioButton.TabIndex = 1;
+            this.clan2RadioButton.TabStop = true;
+            this.clan2RadioButton.Text = "Clan2";
+            this.clan2RadioButton.UseVisualStyleBackColor = true;
+            this.clan2RadioButton.CheckedChanged += new System.EventHandler(this.clan2RadioButton_CheckedChanged);
+            // 
+            // clan1RadioButton
+            // 
+            this.clan1RadioButton.AutoSize = true;
+            this.clan1RadioButton.Location = new System.Drawing.Point(7, 20);
+            this.clan1RadioButton.Name = "clan1RadioButton";
+            this.clan1RadioButton.Size = new System.Drawing.Size(52, 17);
+            this.clan1RadioButton.TabIndex = 0;
+            this.clan1RadioButton.TabStop = true;
+            this.clan1RadioButton.Text = "Clan1";
+            this.clan1RadioButton.UseVisualStyleBackColor = true;
+            this.clan1RadioButton.CheckedChanged += new System.EventHandler(this.clan1RadioButton_CheckedChanged);
             // 
             // factionGroupBox
             // 
@@ -139,32 +187,34 @@
             this.factionGroupBox.Location = new System.Drawing.Point(13, 237);
             this.factionGroupBox.Name = "factionGroupBox";
             this.factionGroupBox.Size = new System.Drawing.Size(99, 64);
-            this.factionGroupBox.TabIndex = 2;
+            this.factionGroupBox.TabIndex = 3;
             this.factionGroupBox.TabStop = false;
             this.factionGroupBox.Text = "&Faction";
             this.factionGroupBox.Enter += new System.EventHandler(this.factionGroupBox_Enter);
-            // 
-            // faction1RadioButton
-            // 
-            this.faction1RadioButton.AutoSize = true;
-            this.faction1RadioButton.Location = new System.Drawing.Point(7, 20);
-            this.faction1RadioButton.Name = "faction1RadioButton";
-            this.faction1RadioButton.Size = new System.Drawing.Size(62, 17);
-            this.faction1RadioButton.TabIndex = 0;
-            this.faction1RadioButton.TabStop = true;
-            this.faction1RadioButton.Text = "Alliance";
-            this.faction1RadioButton.UseVisualStyleBackColor = true;
             // 
             // faction2RadioButton
             // 
             this.faction2RadioButton.AutoSize = true;
             this.faction2RadioButton.Location = new System.Drawing.Point(7, 44);
             this.faction2RadioButton.Name = "faction2RadioButton";
-            this.faction2RadioButton.Size = new System.Drawing.Size(54, 17);
+            this.faction2RadioButton.Size = new System.Drawing.Size(66, 17);
             this.faction2RadioButton.TabIndex = 1;
             this.faction2RadioButton.TabStop = true;
-            this.faction2RadioButton.Text = "Horde";
+            this.faction2RadioButton.Text = "Faction2";
             this.faction2RadioButton.UseVisualStyleBackColor = true;
+            this.faction2RadioButton.CheckedChanged += new System.EventHandler(this.faction2RadioButton_CheckedChanged);
+            // 
+            // faction1RadioButton
+            // 
+            this.faction1RadioButton.AutoSize = true;
+            this.faction1RadioButton.Location = new System.Drawing.Point(7, 20);
+            this.faction1RadioButton.Name = "faction1RadioButton";
+            this.faction1RadioButton.Size = new System.Drawing.Size(66, 17);
+            this.faction1RadioButton.TabIndex = 0;
+            this.faction1RadioButton.TabStop = true;
+            this.faction1RadioButton.Text = "Faction1";
+            this.faction1RadioButton.UseVisualStyleBackColor = true;
+            this.faction1RadioButton.CheckedChanged += new System.EventHandler(this.faction1RadioButton_CheckedChanged);
             // 
             // upbringingGroupBox
             // 
@@ -174,43 +224,46 @@
             this.upbringingGroupBox.Location = new System.Drawing.Point(13, 308);
             this.upbringingGroupBox.Name = "upbringingGroupBox";
             this.upbringingGroupBox.Size = new System.Drawing.Size(99, 100);
-            this.upbringingGroupBox.TabIndex = 3;
+            this.upbringingGroupBox.TabIndex = 4;
             this.upbringingGroupBox.TabStop = false;
             this.upbringingGroupBox.Text = "Upbringing";
             this.upbringingGroupBox.Enter += new System.EventHandler(this.upbringingGroupBox_Enter);
-            // 
-            // upbringing1RadioButton
-            // 
-            this.upbringing1RadioButton.AutoSize = true;
-            this.upbringing1RadioButton.Location = new System.Drawing.Point(7, 20);
-            this.upbringing1RadioButton.Name = "upbringing1RadioButton";
-            this.upbringing1RadioButton.Size = new System.Drawing.Size(70, 17);
-            this.upbringing1RadioButton.TabIndex = 0;
-            this.upbringing1RadioButton.TabStop = true;
-            this.upbringing1RadioButton.Text = "Affluence";
-            this.upbringing1RadioButton.UseVisualStyleBackColor = true;
-            // 
-            // upbringing2RadioButton
-            // 
-            this.upbringing2RadioButton.AutoSize = true;
-            this.upbringing2RadioButton.Location = new System.Drawing.Point(7, 44);
-            this.upbringing2RadioButton.Name = "upbringing2RadioButton";
-            this.upbringing2RadioButton.Size = new System.Drawing.Size(93, 17);
-            this.upbringing2RadioButton.TabIndex = 1;
-            this.upbringing2RadioButton.TabStop = true;
-            this.upbringing2RadioButton.Text = "Working Class";
-            this.upbringing2RadioButton.UseVisualStyleBackColor = true;
             // 
             // upbringing3RadioButton
             // 
             this.upbringing3RadioButton.AutoSize = true;
             this.upbringing3RadioButton.Location = new System.Drawing.Point(7, 68);
             this.upbringing3RadioButton.Name = "upbringing3RadioButton";
-            this.upbringing3RadioButton.Size = new System.Drawing.Size(61, 17);
+            this.upbringing3RadioButton.Size = new System.Drawing.Size(82, 17);
             this.upbringing3RadioButton.TabIndex = 2;
             this.upbringing3RadioButton.TabStop = true;
-            this.upbringing3RadioButton.Text = "Poverty";
+            this.upbringing3RadioButton.Text = "Upbringing3";
             this.upbringing3RadioButton.UseVisualStyleBackColor = true;
+            this.upbringing3RadioButton.CheckedChanged += new System.EventHandler(this.upbringing3RadioButton_CheckedChanged);
+            // 
+            // upbringing2RadioButton
+            // 
+            this.upbringing2RadioButton.AutoSize = true;
+            this.upbringing2RadioButton.Location = new System.Drawing.Point(7, 44);
+            this.upbringing2RadioButton.Name = "upbringing2RadioButton";
+            this.upbringing2RadioButton.Size = new System.Drawing.Size(82, 17);
+            this.upbringing2RadioButton.TabIndex = 1;
+            this.upbringing2RadioButton.TabStop = true;
+            this.upbringing2RadioButton.Text = "Upbringing2";
+            this.upbringing2RadioButton.UseVisualStyleBackColor = true;
+            this.upbringing2RadioButton.CheckedChanged += new System.EventHandler(this.upbringing2RadioButton_CheckedChanged);
+            // 
+            // upbringing1RadioButton
+            // 
+            this.upbringing1RadioButton.AutoSize = true;
+            this.upbringing1RadioButton.Location = new System.Drawing.Point(7, 20);
+            this.upbringing1RadioButton.Name = "upbringing1RadioButton";
+            this.upbringing1RadioButton.Size = new System.Drawing.Size(82, 17);
+            this.upbringing1RadioButton.TabIndex = 0;
+            this.upbringing1RadioButton.TabStop = true;
+            this.upbringing1RadioButton.Text = "Upbringing1";
+            this.upbringing1RadioButton.UseVisualStyleBackColor = true;
+            this.upbringing1RadioButton.CheckedChanged += new System.EventHandler(this.upbringing1RadioButton_CheckedChanged);
             // 
             // characterStatOutputHeaderLabel
             // 
@@ -224,9 +277,9 @@
             // characterStatOutputLabel
             // 
             this.characterStatOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.characterStatOutputLabel.Location = new System.Drawing.Point(307, 328);
+            this.characterStatOutputLabel.Location = new System.Drawing.Point(256, 328);
             this.characterStatOutputLabel.Name = "characterStatOutputLabel";
-            this.characterStatOutputLabel.Size = new System.Drawing.Size(84, 97);
+            this.characterStatOutputLabel.Size = new System.Drawing.Size(135, 97);
             this.characterStatOutputLabel.TabIndex = 6;
             // 
             // primaryStatGroupBox
@@ -245,41 +298,14 @@
             this.primaryStatGroupBox.Text = "Primary Stats";
             this.primaryStatGroupBox.Enter += new System.EventHandler(this.primaryStatGroupBox_Enter);
             // 
-            // priStatNameLabel
+            // priStat3OutputLabel
             // 
-            this.priStatNameLabel.AutoSize = true;
-            this.priStatNameLabel.Location = new System.Drawing.Point(9, 20);
-            this.priStatNameLabel.Name = "priStatNameLabel";
-            this.priStatNameLabel.Size = new System.Drawing.Size(47, 13);
-            this.priStatNameLabel.TabIndex = 0;
-            this.priStatNameLabel.Text = "Strength";
-            // 
-            // priStat2NameLabel
-            // 
-            this.priStat2NameLabel.AutoSize = true;
-            this.priStat2NameLabel.Location = new System.Drawing.Point(9, 45);
-            this.priStat2NameLabel.Name = "priStat2NameLabel";
-            this.priStat2NameLabel.Size = new System.Drawing.Size(34, 13);
-            this.priStat2NameLabel.TabIndex = 1;
-            this.priStat2NameLabel.Text = "Agility";
-            // 
-            // priStat3NameLabel
-            // 
-            this.priStat3NameLabel.AutoSize = true;
-            this.priStat3NameLabel.Location = new System.Drawing.Point(9, 70);
-            this.priStat3NameLabel.Name = "priStat3NameLabel";
-            this.priStat3NameLabel.Size = new System.Drawing.Size(44, 13);
-            this.priStat3NameLabel.TabIndex = 2;
-            this.priStat3NameLabel.Text = "Intellect";
-            // 
-            // priStatOutputLabel
-            // 
-            this.priStatOutputLabel.AutoSize = true;
-            this.priStatOutputLabel.Location = new System.Drawing.Point(94, 20);
-            this.priStatOutputLabel.Name = "priStatOutputLabel";
-            this.priStatOutputLabel.Size = new System.Drawing.Size(13, 13);
-            this.priStatOutputLabel.TabIndex = 3;
-            this.priStatOutputLabel.Text = "0";
+            this.priStat3OutputLabel.AutoSize = true;
+            this.priStat3OutputLabel.Location = new System.Drawing.Point(94, 68);
+            this.priStat3OutputLabel.Name = "priStat3OutputLabel";
+            this.priStat3OutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.priStat3OutputLabel.TabIndex = 5;
+            this.priStat3OutputLabel.Text = "0";
             // 
             // priStat2OutputLabel
             // 
@@ -290,20 +316,69 @@
             this.priStat2OutputLabel.TabIndex = 4;
             this.priStat2OutputLabel.Text = "0";
             // 
-            // priStat3OutputLabel
+            // priStatOutputLabel
             // 
-            this.priStat3OutputLabel.AutoSize = true;
-            this.priStat3OutputLabel.Location = new System.Drawing.Point(94, 68);
-            this.priStat3OutputLabel.Name = "priStat3OutputLabel";
-            this.priStat3OutputLabel.Size = new System.Drawing.Size(13, 13);
-            this.priStat3OutputLabel.TabIndex = 5;
-            this.priStat3OutputLabel.Text = "0";
+            this.priStatOutputLabel.AutoSize = true;
+            this.priStatOutputLabel.Location = new System.Drawing.Point(94, 20);
+            this.priStatOutputLabel.Name = "priStatOutputLabel";
+            this.priStatOutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.priStatOutputLabel.TabIndex = 3;
+            this.priStatOutputLabel.Text = "0";
+            // 
+            // priStat3NameLabel
+            // 
+            this.priStat3NameLabel.AutoSize = true;
+            this.priStat3NameLabel.Location = new System.Drawing.Point(9, 70);
+            this.priStat3NameLabel.Name = "priStat3NameLabel";
+            this.priStat3NameLabel.Size = new System.Drawing.Size(44, 13);
+            this.priStat3NameLabel.TabIndex = 2;
+            this.priStat3NameLabel.Text = "Intellect";
+            // 
+            // priStat2NameLabel
+            // 
+            this.priStat2NameLabel.AutoSize = true;
+            this.priStat2NameLabel.Location = new System.Drawing.Point(9, 45);
+            this.priStat2NameLabel.Name = "priStat2NameLabel";
+            this.priStat2NameLabel.Size = new System.Drawing.Size(34, 13);
+            this.priStat2NameLabel.TabIndex = 1;
+            this.priStat2NameLabel.Text = "Agility";
+            // 
+            // priStatNameLabel
+            // 
+            this.priStatNameLabel.AutoSize = true;
+            this.priStatNameLabel.Location = new System.Drawing.Point(9, 20);
+            this.priStatNameLabel.Name = "priStatNameLabel";
+            this.priStatNameLabel.Size = new System.Drawing.Size(47, 13);
+            this.priStatNameLabel.TabIndex = 0;
+            this.priStatNameLabel.Text = "Strength";
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(93, 414);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 0;
+            this.clearButton.Text = "C&lear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // proceedButton
+            // 
+            this.proceedButton.Location = new System.Drawing.Point(175, 413);
+            this.proceedButton.Name = "proceedButton";
+            this.proceedButton.Size = new System.Drawing.Size(75, 23);
+            this.proceedButton.TabIndex = 8;
+            this.proceedButton.Text = "P&roceed";
+            this.proceedButton.UseVisualStyleBackColor = true;
+            this.proceedButton.Click += new System.EventHandler(this.proceedButton_Click);
             // 
             // CSsharpPracticeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 434);
+            this.Controls.Add(this.proceedButton);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.primaryStatGroupBox);
             this.Controls.Add(this.characterStatOutputLabel);
             this.Controls.Add(this.characterStatOutputHeaderLabel);
@@ -318,6 +393,8 @@
             this.Load += new System.EventHandler(this.CSsharpPracticeForm_Load);
             this.raceGroupBox.ResumeLayout(false);
             this.raceGroupBox.PerformLayout();
+            this.clanGroupBox.ResumeLayout(false);
+            this.clanGroupBox.PerformLayout();
             this.factionGroupBox.ResumeLayout(false);
             this.factionGroupBox.PerformLayout();
             this.upbringingGroupBox.ResumeLayout(false);
@@ -354,6 +431,11 @@
         private System.Windows.Forms.Label priStat2OutputLabel;
         private System.Windows.Forms.Label priStatOutputLabel;
         private System.Windows.Forms.Label priStat3NameLabel;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.RadioButton clan3RadioButton;
+        private System.Windows.Forms.RadioButton clan2RadioButton;
+        private System.Windows.Forms.RadioButton clan1RadioButton;
+        private System.Windows.Forms.Button proceedButton;
     }
 }
 
