@@ -56,11 +56,23 @@
             this.priStatNameLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.proceedButton = new System.Windows.Forms.Button();
+            this.priStat4NameLabel = new System.Windows.Forms.Label();
+            this.priStat4OutputLabel = new System.Windows.Forms.Label();
+            this.secondaryStatGroupBox = new System.Windows.Forms.GroupBox();
+            this.secStatNameLabel = new System.Windows.Forms.Label();
+            this.secStat2NameLabel = new System.Windows.Forms.Label();
+            this.secStat3NameLabel = new System.Windows.Forms.Label();
+            this.secStat4NameLabel = new System.Windows.Forms.Label();
+            this.secStatOutputLabel = new System.Windows.Forms.Label();
+            this.secStat2OutputLabel = new System.Windows.Forms.Label();
+            this.secStat3OutputLabel = new System.Windows.Forms.Label();
+            this.secStat4OutputLabel = new System.Windows.Forms.Label();
             this.raceGroupBox.SuspendLayout();
             this.clanGroupBox.SuspendLayout();
             this.factionGroupBox.SuspendLayout();
             this.upbringingGroupBox.SuspendLayout();
             this.primaryStatGroupBox.SuspendLayout();
+            this.secondaryStatGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // newCharacterHeaderLabel
@@ -267,12 +279,13 @@
             // 
             // characterStatOutputHeaderLabel
             // 
-            this.characterStatOutputHeaderLabel.AutoSize = true;
-            this.characterStatOutputHeaderLabel.Location = new System.Drawing.Point(304, 308);
+            this.characterStatOutputHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.characterStatOutputHeaderLabel.Location = new System.Drawing.Point(256, 303);
             this.characterStatOutputHeaderLabel.Name = "characterStatOutputHeaderLabel";
-            this.characterStatOutputHeaderLabel.Size = new System.Drawing.Size(87, 13);
+            this.characterStatOutputHeaderLabel.Size = new System.Drawing.Size(135, 18);
             this.characterStatOutputHeaderLabel.TabIndex = 5;
-            this.characterStatOutputHeaderLabel.Text = "Character\'s Stats";
+            this.characterStatOutputHeaderLabel.Text = "Character\'s Bio/Stats";
+            this.characterStatOutputHeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // characterStatOutputLabel
             // 
@@ -284,6 +297,8 @@
             // 
             // primaryStatGroupBox
             // 
+            this.primaryStatGroupBox.Controls.Add(this.priStat4OutputLabel);
+            this.primaryStatGroupBox.Controls.Add(this.priStat4NameLabel);
             this.primaryStatGroupBox.Controls.Add(this.priStat3OutputLabel);
             this.primaryStatGroupBox.Controls.Add(this.priStat2OutputLabel);
             this.primaryStatGroupBox.Controls.Add(this.priStatOutputLabel);
@@ -292,7 +307,7 @@
             this.primaryStatGroupBox.Controls.Add(this.priStatNameLabel);
             this.primaryStatGroupBox.Location = new System.Drawing.Point(133, 34);
             this.primaryStatGroupBox.Name = "primaryStatGroupBox";
-            this.primaryStatGroupBox.Size = new System.Drawing.Size(116, 100);
+            this.primaryStatGroupBox.Size = new System.Drawing.Size(116, 119);
             this.primaryStatGroupBox.TabIndex = 7;
             this.primaryStatGroupBox.TabStop = false;
             this.primaryStatGroupBox.Text = "Primary Stats";
@@ -301,7 +316,7 @@
             // priStat3OutputLabel
             // 
             this.priStat3OutputLabel.AutoSize = true;
-            this.priStat3OutputLabel.Location = new System.Drawing.Point(94, 68);
+            this.priStat3OutputLabel.Location = new System.Drawing.Point(94, 70);
             this.priStat3OutputLabel.Name = "priStat3OutputLabel";
             this.priStat3OutputLabel.Size = new System.Drawing.Size(13, 13);
             this.priStat3OutputLabel.TabIndex = 5;
@@ -372,11 +387,119 @@
             this.proceedButton.UseVisualStyleBackColor = true;
             this.proceedButton.Click += new System.EventHandler(this.proceedButton_Click);
             // 
+            // priStat4NameLabel
+            // 
+            this.priStat4NameLabel.AutoSize = true;
+            this.priStat4NameLabel.Location = new System.Drawing.Point(9, 95);
+            this.priStat4NameLabel.Name = "priStat4NameLabel";
+            this.priStat4NameLabel.Size = new System.Drawing.Size(48, 13);
+            this.priStat4NameLabel.TabIndex = 6;
+            this.priStat4NameLabel.Text = "Fortitude";
+            // 
+            // priStat4OutputLabel
+            // 
+            this.priStat4OutputLabel.AutoSize = true;
+            this.priStat4OutputLabel.Location = new System.Drawing.Point(94, 95);
+            this.priStat4OutputLabel.Name = "priStat4OutputLabel";
+            this.priStat4OutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.priStat4OutputLabel.TabIndex = 7;
+            this.priStat4OutputLabel.Text = "0";
+            // 
+            // secondaryStatGroupBox
+            // 
+            this.secondaryStatGroupBox.Controls.Add(this.secStat4OutputLabel);
+            this.secondaryStatGroupBox.Controls.Add(this.secStat3OutputLabel);
+            this.secondaryStatGroupBox.Controls.Add(this.secStat2OutputLabel);
+            this.secondaryStatGroupBox.Controls.Add(this.secStatOutputLabel);
+            this.secondaryStatGroupBox.Controls.Add(this.secStat4NameLabel);
+            this.secondaryStatGroupBox.Controls.Add(this.secStat3NameLabel);
+            this.secondaryStatGroupBox.Controls.Add(this.secStat2NameLabel);
+            this.secondaryStatGroupBox.Controls.Add(this.secStatNameLabel);
+            this.secondaryStatGroupBox.Location = new System.Drawing.Point(133, 160);
+            this.secondaryStatGroupBox.Name = "secondaryStatGroupBox";
+            this.secondaryStatGroupBox.Size = new System.Drawing.Size(117, 100);
+            this.secondaryStatGroupBox.TabIndex = 9;
+            this.secondaryStatGroupBox.TabStop = false;
+            this.secondaryStatGroupBox.Text = "Secondary Stats";
+            // 
+            // secStatNameLabel
+            // 
+            this.secStatNameLabel.AutoSize = true;
+            this.secStatNameLabel.Location = new System.Drawing.Point(7, 20);
+            this.secStatNameLabel.Name = "secStatNameLabel";
+            this.secStatNameLabel.Size = new System.Drawing.Size(53, 13);
+            this.secStatNameLabel.TabIndex = 0;
+            this.secStatNameLabel.Text = "Willpower";
+            // 
+            // secStat2NameLabel
+            // 
+            this.secStat2NameLabel.AutoSize = true;
+            this.secStat2NameLabel.Location = new System.Drawing.Point(7, 40);
+            this.secStat2NameLabel.Name = "secStat2NameLabel";
+            this.secStat2NameLabel.Size = new System.Drawing.Size(60, 13);
+            this.secStat2NameLabel.TabIndex = 1;
+            this.secStat2NameLabel.Text = "Intimidation";
+            // 
+            // secStat3NameLabel
+            // 
+            this.secStat3NameLabel.AutoSize = true;
+            this.secStat3NameLabel.Location = new System.Drawing.Point(7, 60);
+            this.secStat3NameLabel.Name = "secStat3NameLabel";
+            this.secStat3NameLabel.Size = new System.Drawing.Size(48, 13);
+            this.secStat3NameLabel.TabIndex = 2;
+            this.secStat3NameLabel.Text = "Empathy";
+            // 
+            // secStat4NameLabel
+            // 
+            this.secStat4NameLabel.AutoSize = true;
+            this.secStat4NameLabel.Location = new System.Drawing.Point(7, 80);
+            this.secStat4NameLabel.Name = "secStat4NameLabel";
+            this.secStat4NameLabel.Size = new System.Drawing.Size(47, 13);
+            this.secStat4NameLabel.TabIndex = 3;
+            this.secStat4NameLabel.Text = "Respect";
+            // 
+            // secStatOutputLabel
+            // 
+            this.secStatOutputLabel.AutoSize = true;
+            this.secStatOutputLabel.Location = new System.Drawing.Point(94, 20);
+            this.secStatOutputLabel.Name = "secStatOutputLabel";
+            this.secStatOutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.secStatOutputLabel.TabIndex = 4;
+            this.secStatOutputLabel.Text = "0";
+            // 
+            // secStat2OutputLabel
+            // 
+            this.secStat2OutputLabel.AutoSize = true;
+            this.secStat2OutputLabel.Location = new System.Drawing.Point(94, 39);
+            this.secStat2OutputLabel.Name = "secStat2OutputLabel";
+            this.secStat2OutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.secStat2OutputLabel.TabIndex = 5;
+            this.secStat2OutputLabel.Text = "0";
+            // 
+            // secStat3OutputLabel
+            // 
+            this.secStat3OutputLabel.AutoSize = true;
+            this.secStat3OutputLabel.Location = new System.Drawing.Point(94, 58);
+            this.secStat3OutputLabel.Name = "secStat3OutputLabel";
+            this.secStat3OutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.secStat3OutputLabel.TabIndex = 6;
+            this.secStat3OutputLabel.Text = "0";
+            // 
+            // secStat4OutputLabel
+            // 
+            this.secStat4OutputLabel.AutoSize = true;
+            this.secStat4OutputLabel.Location = new System.Drawing.Point(94, 77);
+            this.secStat4OutputLabel.Name = "secStat4OutputLabel";
+            this.secStat4OutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.secStat4OutputLabel.TabIndex = 7;
+            this.secStat4OutputLabel.Text = "0";
+            // 
             // CSsharpPracticeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 434);
+            this.Controls.Add(this.secondaryStatGroupBox);
             this.Controls.Add(this.proceedButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.primaryStatGroupBox);
@@ -401,6 +524,8 @@
             this.upbringingGroupBox.PerformLayout();
             this.primaryStatGroupBox.ResumeLayout(false);
             this.primaryStatGroupBox.PerformLayout();
+            this.secondaryStatGroupBox.ResumeLayout(false);
+            this.secondaryStatGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,6 +561,17 @@
         private System.Windows.Forms.RadioButton clan2RadioButton;
         private System.Windows.Forms.RadioButton clan1RadioButton;
         private System.Windows.Forms.Button proceedButton;
+        private System.Windows.Forms.Label priStat4OutputLabel;
+        private System.Windows.Forms.Label priStat4NameLabel;
+        private System.Windows.Forms.GroupBox secondaryStatGroupBox;
+        private System.Windows.Forms.Label secStat4OutputLabel;
+        private System.Windows.Forms.Label secStat3OutputLabel;
+        private System.Windows.Forms.Label secStat2OutputLabel;
+        private System.Windows.Forms.Label secStatOutputLabel;
+        private System.Windows.Forms.Label secStat4NameLabel;
+        private System.Windows.Forms.Label secStat3NameLabel;
+        private System.Windows.Forms.Label secStat2NameLabel;
+        private System.Windows.Forms.Label secStatNameLabel;
     }
 }
 

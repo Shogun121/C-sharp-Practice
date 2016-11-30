@@ -129,7 +129,25 @@ namespace CsharpPractice
         {
             if (race1RadioButton.Checked)
             {
-                this.characterStatOutputLabel.Text += "human bio " + "+ 1 Intellect" + Environment.NewLine;
+                //text output to the description box
+                this.characterStatOutputLabel.Text += "Humanity " + Environment.NewLine+
+                                                "A species strong of will and prejudice. "+
+                                                "Capable and cautious, undertaking tasks borne "+
+                                                "of necessity to ensure their survival.";
+
+                //Stat updates
+
+                //pri Stat set
+                priStatOutputLabel.Text = "5";
+                priStat2OutputLabel.Text = "5";
+                priStat2OutputLabel.Text = "6";
+                priStat2OutputLabel.Text = "10";
+
+                //sec stat set
+                priStat2OutputLabel.Text = "20";
+                priStat2OutputLabel.Text = "15";
+                priStat2OutputLabel.Text = "15";
+                priStat2OutputLabel.Text = "5";
 
                 race2RadioButton.Enabled = false;
                 race3RadioButton.Enabled = false;
