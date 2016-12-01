@@ -208,23 +208,52 @@ namespace CsharpPractice
         //---------------------------------------------------------------------------------------
         private void clearButton_Click(object sender, EventArgs e)
         {
+            //reset description string
             characterStatOutputLabel.Text = "";
-
+            //Reset all of the radio buttons to runtime.
+            ClearRadioButtons();
+            //Reset all of the groupboxes to runtime.
+            ClearGroupBoxes();
+            //Reset stat values to runtime.
+            ClearStats();
+        }
+        private void ClearRadioButtons()
+        {
+            ClearRaceRadioButtons();
+            ClearClanRadioButtons();
+            ClearFactionRadioButtons();
+            ClearUpbringingRadioButtons();           
+        }
+        private void ClearRaceRadioButtons()
+        {
+            //clear race buttons
             race1RadioButton.Checked = false;
             race2RadioButton.Checked = false;
             race3RadioButton.Checked = false;
-
+        }
+        private void ClearClanRadioButtons()
+        {
+            //clear clan buttons
             clan1RadioButton.Visible = false;
             clan2RadioButton.Visible = false;
             clan3RadioButton.Visible = false;
-
+        }
+        private void ClearFactionRadioButtons()
+        {
+            //clear faction buttons
             faction1RadioButton.Checked = false;
             faction2RadioButton.Checked = false;
-
+        }
+        private void ClearUpbringingRadioButtons()
+        {
+            //clear upbringing buttons
             upbringing1RadioButton.Checked = false;
             upbringing2RadioButton.Checked = false;
             upbringing3RadioButton.Checked = false;
-
+        }
+        private void ClearGroupBoxes()
+        {
+            //reset groupbox accessibility
             raceGroupBox.Enabled = true;
             clanGroupBox.Enabled = false;
             factionGroupBox.Enabled = false;
@@ -467,6 +496,30 @@ namespace CsharpPractice
             Number += int.Parse(Label.Text);
             //Update the Label's text with the current stat amount.
             Label.Text = Number.ToString();
+        }
+        /// <summary>
+        /// Method to clear the stats when a char is cleared/start-up occurs.
+        /// </summary>
+        private void ClearStats()
+        {
+            ClearPriStats();
+            ClearSecStats();
+        }
+        private void ClearPriStats()
+        {
+            //Pri Stat Reset
+            priStatOutputLabel.Text = 0.ToString();
+            priStat2OutputLabel.Text = 0.ToString();
+            priStat3OutputLabel.Text = 0.ToString();
+            priStat4OutputLabel.Text = 0.ToString();
+        }
+        private void ClearSecStats()
+        {
+            //Sec Stat Reset
+            secStatOutputLabel.Text = 0.ToString();
+            secStat2OutputLabel.Text = 0.ToString();
+            secStat3OutputLabel.Text = 0.ToString();
+            secStat4OutputLabel.Text = 0.ToString();
         }
     }
 }
