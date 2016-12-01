@@ -68,8 +68,6 @@ namespace CsharpPractice
             upbringing1RadioButton.Text = "Affluence";
             upbringing2RadioButton.Text = "Working Class";
             upbringing3RadioButton.Text = "Poverty";
-
-            //TO DO :Write Button text here instead of on the form to allow for easy change.
         }
         /// <summary>
         /// Control Group for all of the races the character could be.
@@ -133,22 +131,23 @@ namespace CsharpPractice
                 this.characterStatOutputLabel.Text += "Humanity " + Environment.NewLine+
                                                 "A species strong of will and prejudice. "+
                                                 "Capable and cautious, undertaking tasks borne "+
-                                                "of necessity to ensure their survival.";
-
+                                                "of necessity to ensure their survival."+
+                                                Environment.NewLine;
                 //Stat updates
 
                 //pri Stat set
-                priStatOutputLabel.Text = "5";
-                priStat2OutputLabel.Text = "5";
-                priStat2OutputLabel.Text = "6";
-                priStat2OutputLabel.Text = "10";
+                UpdateStatValue(priStatOutputLabel, 5);
+                UpdateStatValue(priStat2OutputLabel, 5);
+                UpdateStatValue(priStat3OutputLabel, 6);
+                UpdateStatValue(priStat4OutputLabel, 10);
 
                 //sec stat set
-                priStat2OutputLabel.Text = "20";
-                priStat2OutputLabel.Text = "15";
-                priStat2OutputLabel.Text = "15";
-                priStat2OutputLabel.Text = "5";
+                UpdateStatValue(secStatOutputLabel, 20);
+                UpdateStatValue(secStat2OutputLabel, 15);
+                UpdateStatValue(secStat3OutputLabel, 15);
+                UpdateStatValue(secStat4OutputLabel, 5);
 
+                //Disable other races to prevent cross selection
                 race2RadioButton.Enabled = false;
                 race3RadioButton.Enabled = false;
             }
@@ -157,7 +156,23 @@ namespace CsharpPractice
         {
             if (race2RadioButton.Checked)
             {
-                characterStatOutputLabel.Text += "dwarf bio " + "+ 1 Strength" + Environment.NewLine;
+                characterStatOutputLabel.Text += "Dwarf"+ Environment.NewLine+
+                                                 "A species intereted first and forement "+
+                                                 "in wealth and status."+
+                                                 "Dwarves are divided into castes socially and "+
+                                                 "economically"+Environment.NewLine;
+
+                //Set Pri Stats
+                UpdateStatValue(priStatOutputLabel,10);
+                UpdateStatValue(priStat2OutputLabel, 5);
+                UpdateStatValue(priStat3OutputLabel, 3);
+                UpdateStatValue(priStat4OutputLabel, 15);
+
+                //set Sec Stats
+                UpdateStatValue(secStatOutputLabel, 5);
+                UpdateStatValue(secStat2OutputLabel, 10);
+                UpdateStatValue(secStat3OutputLabel, 5);
+                UpdateStatValue(secStat4OutputLabel, 5);
 
                 race1RadioButton.Enabled = false;
                 race3RadioButton.Enabled = false;
@@ -199,19 +214,6 @@ namespace CsharpPractice
             clanGroupBox.Enabled = false;
             factionGroupBox.Enabled = false;
             upbringingGroupBox.Enabled = false;
-
-            //Code Radio Button text in to allow for easy switch out
-            race1RadioButton.Text = "Human";
-            race2RadioButton.Text = "Dwarf";
-            race3RadioButton.Text = "Elf";
-
-            faction1RadioButton.Text = "Alliance";
-            faction2RadioButton.Text = "Horde";
-
-            upbringing1RadioButton.Text = "Affluence";
-            upbringing2RadioButton.Text = "Working Class";
-            upbringing3RadioButton.Text = "Poverty";
-
         }
         //---------------------------------------------------------------------------------------
         //FACTION RADIO BUTTONS
@@ -220,7 +222,13 @@ namespace CsharpPractice
         {
             if (faction1RadioButton.Checked)
             {
-                characterStatOutputLabel.Text += "Alliance bio " + "+ 5 Rapport" + Environment.NewLine;
+                characterStatOutputLabel.Text += "Alliance"+ Environment.NewLine+
+                                                 "The alliance is comprised of species "+
+                                                 "commiting to fair treatment of each other"+
+                                                 Environment.NewLine;
+
+                //Updating the "Respect" stat
+                UpdateStatValue(secStat4OutputLabel, 5);
 
                 faction2RadioButton.Enabled = false;
             }
@@ -426,9 +434,19 @@ namespace CsharpPractice
                     characterStatOutputLabel.Text += "Poverty bio " + " + 1 Humility, - 1 Repuation";
                 }
             }
-        
-      
-        
+        /// <summary>
+        /// Method used to update the text property of the output labels with current
+        /// stat amounts.
+        /// </summary>
+        /// <param name="Label">The Output Label in question</param>
+        /// <param name="Number">The stat amount needing to be set</param>
+        private void UpdateStatValue(Label Label, int Number)
+        {
+            //Parse the old stat amount and roll it into the new amount(totl=old+new)
+            Number += int.Parse(Label.Text);
+            //Update the Label's text with the current stat amount.
+            Label.Text = Number.ToString();
+        }
     }
 }
 /**
