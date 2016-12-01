@@ -253,7 +253,13 @@ namespace CsharpPractice
         {
             if (faction2RadioButton.Checked)
             {
-                characterStatOutputLabel.Text += "Horde bio " + "+ 5 Intimidation" + Environment.NewLine;
+                characterStatOutputLabel.Text += "Horde" + Environment.NewLine+
+                                                 "A loose collaboration of organizations "+
+                                                 "simlpy striving for similar goals."+                   
+                                                 Environment.NewLine;
+
+                //Update Stats
+                UpdateStatValue(secStat2OutputLabel,5);
 
                 faction1RadioButton.Enabled = false;
             }
