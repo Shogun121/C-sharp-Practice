@@ -182,7 +182,22 @@ namespace CsharpPractice
         {
             if (race3RadioButton.Checked)
             {
-                characterStatOutputLabel.Text += "elf bio " + "+ 1 Agility" + Environment.NewLine;
+                characterStatOutputLabel.Text += "Elf " + Environment.NewLine+
+                                                 "A species of untold ages, that are "+
+                                                 "even tempered, fair, patient, and mindful "+
+                                                 "of their impact on others"+Environment.NewLine;
+
+                //Set Pri Stats
+                UpdateStatValue(priStatOutputLabel,10);
+                UpdateStatValue(priStat2OutputLabel, 10);
+                UpdateStatValue(priStat3OutputLabel, 20);
+                UpdateStatValue(priStat4OutputLabel, 10);
+
+                //Set Sec Stats
+                UpdateStatValue(secStatOutputLabel,10);
+                UpdateStatValue(secStat2OutputLabel, 10);
+                UpdateStatValue(secStat3OutputLabel, 20);
+                UpdateStatValue(secStat4OutputLabel, 15);
 
                 race1RadioButton.Enabled = false;
                 race2RadioButton.Enabled = false;
