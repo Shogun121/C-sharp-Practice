@@ -38,24 +38,29 @@ namespace CsharpPractice
             //Display message to users stating the purpose of the application.
             MessageBox.Show("Welcome to the Character Creator!" + Environment.NewLine +
                             "Here you can create a completely tailored character");
-            race1RadioButton.Checked = false;
-            race2RadioButton.Checked = false;
-            race3RadioButton.Checked = false;
+            //reset description string
+            characterStatOutputLabel.Text = "";
+            //Reset all of the radio buttons to runtime.
+            ClearRadioButtons();
+            //Reset all of the groupboxes to runtime.
+            ClearGroupBoxes();
+            //Reset stat values to runtime.
+            ClearStats();
 
-            clan1RadioButton.Visible = false;
-            clan2RadioButton.Visible = false;
-            clan3RadioButton.Visible = false;
+            //clan1RadioButton.Visible = false;
+            //clan2RadioButton.Visible = false;
+            //clan3RadioButton.Visible = false;
 
-            faction1RadioButton.Checked = false;
-            faction2RadioButton.Checked = false;
+            //faction1RadioButton.Checked = false;
+            //faction2RadioButton.Checked = false;
 
-            upbringing1RadioButton.Checked = false;
-            upbringing2RadioButton.Checked = false;
-            upbringing3RadioButton.Checked = false;
+            //upbringing1RadioButton.Checked = false;
+            //upbringing2RadioButton.Checked = false;
+            //upbringing3RadioButton.Checked = false;
 
-            clanGroupBox.Enabled = false;
-            factionGroupBox.Enabled = false;
-            upbringingGroupBox.Enabled = false;
+            //clanGroupBox.Enabled = false;
+            //factionGroupBox.Enabled = false;
+            //upbringingGroupBox.Enabled = false;
 
             //Code Radio Button text in to allow for easy switch out
             race1RadioButton.Text = "Human";
@@ -69,43 +74,17 @@ namespace CsharpPractice
             upbringing2RadioButton.Text = "Working Class";
             upbringing3RadioButton.Text = "Poverty";
         }
-        /// <summary>
-        /// Control Group for all of the races the character could be.
-        /// When a 'race' is 'selected' output related info to the output display label.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void raceGroupBox_Enter(object sender, EventArgs e)
         {
         }
-
-        /// <summary>
-        /// Control Group for all of the sects/clans the race could be.
-        /// When a 'sect/clan' is 'selected' output related info to the output display label.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void clanGroupBox_Enter(object sender, EventArgs e)
         {
             // TO DO: relate sect/clans to each race.
 
         }
-
-        /// <summary>
-        /// Control Group for all of the factions the race/clan/character could be.
-        /// When a 'faction' is 'selected' output related info to the output display label.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void factionGroupBox_Enter(object sender, EventArgs e)
         {
         }
-        /// <summary>
-        /// Control Group for all of the upbringings the faction/clan/race/character could be.
-        /// When an 'upbringing' is 'selected' output related info to the output display label.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void upbringingGroupBox_Enter(object sender, EventArgs e)
         {
         }
@@ -117,7 +96,6 @@ namespace CsharpPractice
         /// <param name="e"></param>
         private void primaryStatGroupBox_Enter(object sender, EventArgs e)
         {
-            //TO DO :Make responsive to creation selections.
             //TO DO :Notify user that they have 'point(s)' to spend on their 'primary' stats.
         }
         //---------------------------------------------------------------------------------------
@@ -230,6 +208,10 @@ namespace CsharpPractice
             race1RadioButton.Checked = false;
             race2RadioButton.Checked = false;
             race3RadioButton.Checked = false;
+
+            race1RadioButton.Enabled = true;
+            race2RadioButton.Enabled = true;
+            race3RadioButton.Enabled = true;
         }
         private void ClearClanRadioButtons()
         {
@@ -237,12 +219,23 @@ namespace CsharpPractice
             clan1RadioButton.Visible = false;
             clan2RadioButton.Visible = false;
             clan3RadioButton.Visible = false;
+
+            clan1RadioButton.Enabled = true;
+            clan2RadioButton.Enabled = true;
+            clan3RadioButton.Enabled = true;
+
+            clan1RadioButton.Checked = false;
+            clan2RadioButton.Checked = false;
+            clan3RadioButton.Checked = false;
         }
         private void ClearFactionRadioButtons()
         {
             //clear faction buttons
             faction1RadioButton.Checked = false;
             faction2RadioButton.Checked = false;
+
+            faction1RadioButton.Enabled = true;
+            faction2RadioButton.Enabled = true;
         }
         private void ClearUpbringingRadioButtons()
         {
@@ -250,6 +243,10 @@ namespace CsharpPractice
             upbringing1RadioButton.Checked = false;
             upbringing2RadioButton.Checked = false;
             upbringing3RadioButton.Checked = false;
+
+            upbringing1RadioButton.Enabled = true;
+            upbringing2RadioButton.Enabled = true;
+            upbringing3RadioButton.Enabled = true;
         }
         private void ClearGroupBoxes()
         {
@@ -327,7 +324,7 @@ namespace CsharpPractice
             {
                 if (!upbringingGroupBox.Enabled)
                 {
-                    MessageBox.Show("Faction has bene selected!" + Environment.NewLine);
+                    MessageBox.Show("Faction has been selected!" + Environment.NewLine);
                     factionGroupBox.Enabled = false;
                     upbringingGroupBox.Enabled = true;
                 }
@@ -378,27 +375,47 @@ namespace CsharpPractice
         //---------------------------------------------------------------------------------------
         private void clan1RadioButton_CheckedChanged(object sender, EventArgs e)
             {
-                //if(race1RadioButton.Checked)
-               // {
+                if(race1RadioButton.Checked)
+                {
                     if(clan1RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "Mountain bio "+"+ 1 Survivability"+Environment.NewLine;
+                        characterStatOutputLabel.Text += "Mountain "+Environment.NewLine+
+                                                         "Mountain Humans are rugged and are "+
+                                                         "accustomed to hard living"+ Environment.NewLine;
+
+                        UpdateStatValue(secStatOutputLabel,2);
+
                         clan2RadioButton.Enabled= false;
                         clan3RadioButton.Enabled= false;
                     }
                     if (clan2RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "City bio " + "+ 1 Communication" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "City" + Environment.NewLine+
+                                                         "Human Citydwellers are given a great "+
+                                                         "deal of respect, most cities are plagued "+
+                                                         "by crime lords and political machines. "+
+                                                         Environment.NewLine;
+
+                        UpdateStatValue(secStat4OutputLabel,2);
+
                         clan1RadioButton.Enabled = false;
                         clan3RadioButton.Enabled = false;
                     }
                     if (clan3RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "Vagabond bio " + "+ 1 Persuasion" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "Vagabond" + Environment.NewLine+
+                                                         "Human Vagabonds are abrasive, they "+
+                                                         "care little for the well-beling of "+
+                                                         "others and wouldn't hesitate to sell "+
+                                                         "someone out to save their own skin. "+
+                                                         Environment.NewLine;
+
+                        UpdateStatValue(secStat2OutputLabel,2);
+
                         clan1RadioButton.Enabled = false;
                         clan2RadioButton.Enabled = false;
                     }
-                //}
+                }
             }
 
         private void clan2RadioButton_CheckedChanged(object sender, EventArgs e)
