@@ -551,6 +551,7 @@ namespace CsharpPractice
  * 6)Comment
  * 7)Code Clear() to reset program to Load status
  * 8)Debug
+ * 9)Fix bug with display Clan 2 and 3 for Human.
  * 
  * TO IMRPOVE
  * 1)Modularize
