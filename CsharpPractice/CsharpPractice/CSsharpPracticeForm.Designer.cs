@@ -389,6 +389,7 @@
             this.priStatNameLabel.Size = new System.Drawing.Size(47, 13);
             this.priStatNameLabel.TabIndex = 0;
             this.priStatNameLabel.Text = "Strength";
+            this.priStatNameLabel.Click += new System.EventHandler(this.priStatNameLabel_Click);
             // 
             // clearButton
             // 

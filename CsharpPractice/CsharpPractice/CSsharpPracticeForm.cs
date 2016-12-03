@@ -532,9 +532,9 @@ namespace CsharpPractice
                     }
                 }
             }
-            //---------------------------------------------------------------------------------------
+            //------------------------------------------------------------------------------------
             //END CLAN RADIO BUTTONS
-            //---------------------------------------------------------------------------------------
+            //------------------------------------------------------------------------------------
 
         private void upbringing1RadioButton_CheckedChanged(object sender, EventArgs e)
             {
@@ -621,6 +621,19 @@ namespace CsharpPractice
             secStat2OutputLabel.Text = 0.ToString();
             secStat3OutputLabel.Text = 0.ToString();
             secStat4OutputLabel.Text = 0.ToString();
+        }
+
+        private void priStatNameLabel_Click(object sender, EventArgs e)
+        {
+            //Determine if the stat should be clickable and if the user cna any points left.
+            if((!raceGroupBox.Enabled && !clanGroupBox.Enabled && 
+                !factionGroupBox.Enabled && !upbringingGroupBox.Enabled) 
+                && freePriPointsDisplayLabel.Text =="0")
+            {
+                //Update the corresponding Stat by 1, and subtract one from the group pool.
+                UpdateStatValue(priStatOutputLabel,1);
+                UpdateStatValue(freePriPointsDisplayLabel,1);
+            }
         }
     }
 }
