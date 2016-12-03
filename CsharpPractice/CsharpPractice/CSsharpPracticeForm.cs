@@ -80,9 +80,11 @@ namespace CsharpPractice
             //Set all the labels related to extra points invisible
             freePriPointsDisplayLabel.Visible = false;
             freePriPointsNameLabel.Visible = false;
+            freePriPointsDisplayLabel.Text = "3";
 
             freeSecPointsDisplayLabel.Visible = false;
             freeSecPointsNameLabel.Visible = false;
+            freeSecPointsDisplayLabel.Text = "3";
         }
         private void raceGroupBox_Enter(object sender, EventArgs e)
         {
@@ -208,9 +210,11 @@ namespace CsharpPractice
             //Set all the labels related to extra points invisible
             freePriPointsDisplayLabel.Visible = false;
             freePriPointsNameLabel.Visible = false;
+            freePriPointsDisplayLabel.Text = "3";
 
             freeSecPointsDisplayLabel.Visible = false;
             freeSecPointsNameLabel.Visible = false;
+            freeSecPointsDisplayLabel.Text = "3";
         }
         private void ClearRadioButtons()
         {
@@ -624,11 +628,17 @@ namespace CsharpPractice
  * TO DO
  * 1)Clean up
  * 2)Develope Creation choices, be more orginal.
- * 7)Code Clear() to reset program to Load status
- * 9)Fix bug with display Clan 2 and 3 for Human.
+ * 3)Code Clear() to reset program to Load status
+ * 4)Fix bug with display Clan 2 and 3 for Human.
+ * 5)Add Click Reponse to Pri/Sec Stats when they appear on the form.
+ *      Subtract a point from free point pool when selection occurs.
  * 
  * TO IMRPOVE
  * 1)Modularize/Improve
+ * 2)Rethink radiobutton lock-in. (Currently the choice locks in before 'Proceed' is clicked
+ *      in a way obseleting the 'Proceed' button. Perhaps add logic to undo option effects
+ *      if the proceed button is not pressed. This way multiple selections can be made. But
+ *      nothing is locked in until 'Proceed' clicked.
  * 3)Add a Y/N decision dialog box for saftey.
  * 4)Allow stat rolls.
  * 5)Maybe add pictureboxes for when radiobuttons are checked.
