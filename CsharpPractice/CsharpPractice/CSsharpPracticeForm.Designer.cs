@@ -67,6 +67,10 @@
             this.secStat3NameLabel = new System.Windows.Forms.Label();
             this.secStat2NameLabel = new System.Windows.Forms.Label();
             this.secStatNameLabel = new System.Windows.Forms.Label();
+            this.freePriPointsNameLabel = new System.Windows.Forms.Label();
+            this.freeSecPointsNameLabel = new System.Windows.Forms.Label();
+            this.freePriPointsDisplayLabel = new System.Windows.Forms.Label();
+            this.freeSecPointsDisplayLabel = new System.Windows.Forms.Label();
             this.raceGroupBox.SuspendLayout();
             this.clanGroupBox.SuspendLayout();
             this.factionGroupBox.SuspendLayout();
@@ -281,7 +285,7 @@
             // characterStatOutputHeaderLabel
             // 
             this.characterStatOutputHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.characterStatOutputHeaderLabel.Location = new System.Drawing.Point(256, 9);
+            this.characterStatOutputHeaderLabel.Location = new System.Drawing.Point(578, 9);
             this.characterStatOutputHeaderLabel.Name = "characterStatOutputHeaderLabel";
             this.characterStatOutputHeaderLabel.Size = new System.Drawing.Size(135, 18);
             this.characterStatOutputHeaderLabel.TabIndex = 5;
@@ -291,7 +295,7 @@
             // characterStatOutputLabel
             // 
             this.characterStatOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.characterStatOutputLabel.Location = new System.Drawing.Point(256, 34);
+            this.characterStatOutputLabel.Location = new System.Drawing.Point(578, 34);
             this.characterStatOutputLabel.Name = "characterStatOutputLabel";
             this.characterStatOutputLabel.Size = new System.Drawing.Size(135, 391);
             this.characterStatOutputLabel.TabIndex = 6;
@@ -306,7 +310,7 @@
             this.primaryStatGroupBox.Controls.Add(this.priStat3NameLabel);
             this.primaryStatGroupBox.Controls.Add(this.priStat2NameLabel);
             this.primaryStatGroupBox.Controls.Add(this.priStatNameLabel);
-            this.primaryStatGroupBox.Location = new System.Drawing.Point(134, 179);
+            this.primaryStatGroupBox.Location = new System.Drawing.Point(456, 34);
             this.primaryStatGroupBox.Name = "primaryStatGroupBox";
             this.primaryStatGroupBox.Size = new System.Drawing.Size(116, 119);
             this.primaryStatGroupBox.TabIndex = 7;
@@ -416,7 +420,7 @@
             this.secondaryStatGroupBox.Controls.Add(this.secStat3NameLabel);
             this.secondaryStatGroupBox.Controls.Add(this.secStat2NameLabel);
             this.secondaryStatGroupBox.Controls.Add(this.secStatNameLabel);
-            this.secondaryStatGroupBox.Location = new System.Drawing.Point(133, 307);
+            this.secondaryStatGroupBox.Location = new System.Drawing.Point(456, 198);
             this.secondaryStatGroupBox.Name = "secondaryStatGroupBox";
             this.secondaryStatGroupBox.Size = new System.Drawing.Size(117, 100);
             this.secondaryStatGroupBox.TabIndex = 9;
@@ -495,11 +499,51 @@
             this.secStatNameLabel.TabIndex = 0;
             this.secStatNameLabel.Text = "Willpower";
             // 
+            // freePriPointsNameLabel
+            // 
+            this.freePriPointsNameLabel.AutoSize = true;
+            this.freePriPointsNameLabel.Location = new System.Drawing.Point(456, 9);
+            this.freePriPointsNameLabel.Name = "freePriPointsNameLabel";
+            this.freePriPointsNameLabel.Size = new System.Drawing.Size(75, 13);
+            this.freePriPointsNameLabel.TabIndex = 10;
+            this.freePriPointsNameLabel.Text = "Free Pri Points";
+            // 
+            // freeSecPointsNameLabel
+            // 
+            this.freeSecPointsNameLabel.AutoSize = true;
+            this.freeSecPointsNameLabel.Location = new System.Drawing.Point(456, 174);
+            this.freeSecPointsNameLabel.Name = "freeSecPointsNameLabel";
+            this.freeSecPointsNameLabel.Size = new System.Drawing.Size(82, 13);
+            this.freeSecPointsNameLabel.TabIndex = 11;
+            this.freeSecPointsNameLabel.Text = "Free Sec Points";
+            // 
+            // freePriPointsDisplayLabel
+            // 
+            this.freePriPointsDisplayLabel.AutoSize = true;
+            this.freePriPointsDisplayLabel.Location = new System.Drawing.Point(550, 12);
+            this.freePriPointsDisplayLabel.Name = "freePriPointsDisplayLabel";
+            this.freePriPointsDisplayLabel.Size = new System.Drawing.Size(13, 13);
+            this.freePriPointsDisplayLabel.TabIndex = 12;
+            this.freePriPointsDisplayLabel.Text = "0";
+            // 
+            // freeSecPointsDisplayLabel
+            // 
+            this.freeSecPointsDisplayLabel.AutoSize = true;
+            this.freeSecPointsDisplayLabel.Location = new System.Drawing.Point(550, 174);
+            this.freeSecPointsDisplayLabel.Name = "freeSecPointsDisplayLabel";
+            this.freeSecPointsDisplayLabel.Size = new System.Drawing.Size(13, 13);
+            this.freeSecPointsDisplayLabel.TabIndex = 13;
+            this.freeSecPointsDisplayLabel.Text = "0";
+            // 
             // CSsharpPracticeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 434);
+            this.ClientSize = new System.Drawing.Size(725, 434);
+            this.Controls.Add(this.freeSecPointsDisplayLabel);
+            this.Controls.Add(this.freePriPointsDisplayLabel);
+            this.Controls.Add(this.freeSecPointsNameLabel);
+            this.Controls.Add(this.freePriPointsNameLabel);
             this.Controls.Add(this.secondaryStatGroupBox);
             this.Controls.Add(this.proceedButton);
             this.Controls.Add(this.clearButton);
@@ -573,6 +617,10 @@
         private System.Windows.Forms.Label secStat3NameLabel;
         private System.Windows.Forms.Label secStat2NameLabel;
         private System.Windows.Forms.Label secStatNameLabel;
+        private System.Windows.Forms.Label freePriPointsNameLabel;
+        private System.Windows.Forms.Label freeSecPointsNameLabel;
+        private System.Windows.Forms.Label freePriPointsDisplayLabel;
+        private System.Windows.Forms.Label freeSecPointsDisplayLabel;
     }
 }
 

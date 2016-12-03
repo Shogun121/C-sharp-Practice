@@ -28,7 +28,6 @@ namespace CsharpPractice
                 "Exit Confirmation", MessageBoxButtons.YesNo);
             if(dialogResult==DialogResult.Yes)
             {
-                MessageBox.Show("Character was not created.", "Character Creation Exit");
                 this.Close();
             }
         }
@@ -77,6 +76,13 @@ namespace CsharpPractice
             upbringing1RadioButton.Text = "Affluence";
             upbringing2RadioButton.Text = "Working Class";
             upbringing3RadioButton.Text = "Poverty";
+
+            //Set all the labels related to extra points invisible
+            freePriPointsDisplayLabel.Visible = false;
+            freePriPointsNameLabel.Visible = false;
+
+            freeSecPointsDisplayLabel.Visible = false;
+            freeSecPointsNameLabel.Visible = false;
         }
         private void raceGroupBox_Enter(object sender, EventArgs e)
         {
@@ -198,6 +204,13 @@ namespace CsharpPractice
             ClearGroupBoxes();
             //Reset stat values to runtime.
             ClearStats();
+
+            //Set all the labels related to extra points invisible
+            freePriPointsDisplayLabel.Visible = false;
+            freePriPointsNameLabel.Visible = false;
+
+            freeSecPointsDisplayLabel.Visible = false;
+            freeSecPointsNameLabel.Visible = false;
         }
         private void ClearRadioButtons()
         {
@@ -337,6 +350,16 @@ namespace CsharpPractice
             {
                 MessageBox.Show("Character Creation is Complete.","Character Creation");
                 upbringingGroupBox.Enabled = false;
+
+                MessageBox.Show("Now that your character's background has been selected"+
+                    ", you have extra points to spend. Click the stat to increase"
+                    ,"Extra Stat Points");
+                //Set all the labels related to extra points visible
+                freePriPointsDisplayLabel.Visible = true;
+                freePriPointsNameLabel.Visible = true;
+
+                freeSecPointsDisplayLabel.Visible = true;
+                freeSecPointsNameLabel.Visible = true;
             }
         }
             /// <summary>
