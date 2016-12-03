@@ -25,7 +25,7 @@ namespace CsharpPractice
         private void exitButton_Click(object sender, EventArgs e)
         {
             //TODO :Add a Y/N decision dialog box for saftey.
-            MessageBox.Show("Character was not created.");
+            MessageBox.Show("Character was not created.","Character Creation Exit");
             this.Close();
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace CsharpPractice
         private void CSsharpPracticeForm_Load(object sender, EventArgs e)
         {
             //Display message to users stating the purpose of the application.
-            MessageBox.Show("Welcome to the Character Creator!" + Environment.NewLine +
+            MessageBox.Show("Welcome to the Character Creator!","Character Creation Setup" + Environment.NewLine +
                             "Here you can create a completely tailored character");
             //reset description string
             characterStatOutputLabel.Text = "";
@@ -304,7 +304,7 @@ namespace CsharpPractice
             {
                 if (!clanGroupBox.Enabled && !factionGroupBox.Enabled && !upbringingGroupBox.Enabled)
                 {
-                    MessageBox.Show("Race Has been selected!" + Environment.NewLine);
+                    MessageBox.Show("Race Has been selected!","Race Selection" + Environment.NewLine);
                     clanGroupBox.Enabled = true;
                     RaceClanDisplayer();
                     raceGroupBox.Enabled = false;
@@ -315,7 +315,7 @@ namespace CsharpPractice
             {
                 if (!factionGroupBox.Enabled && !upbringingGroupBox.Enabled)
                 {
-                    MessageBox.Show("Clan Has been selected!" + Environment.NewLine);
+                    MessageBox.Show("Clan Has been selected!","Clan Selection" + Environment.NewLine);
                     clanGroupBox.Enabled = false;
                     factionGroupBox.Enabled = true;
                 }
@@ -324,14 +324,14 @@ namespace CsharpPractice
             {
                 if (!upbringingGroupBox.Enabled)
                 {
-                    MessageBox.Show("Faction has been selected!" + Environment.NewLine);
+                    MessageBox.Show("Faction has been selected!","Faction Selection" + Environment.NewLine);
                     factionGroupBox.Enabled = false;
                     upbringingGroupBox.Enabled = true;
                 }
             }
             if (upbringing1RadioButton.Checked || upbringing2RadioButton.Checked || upbringing3RadioButton.Checked)
             {
-                MessageBox.Show("Character Creation is Complete.");
+                MessageBox.Show("Character Creation is Complete.","Character Creation");
             }
         }
             /// <summary>
@@ -424,21 +424,34 @@ namespace CsharpPractice
                 {
                     if (clan1RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "Bronzebeard bio " + "+ 1 Blacksmithing" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "Bronzebeard"+ Environment.NewLine+
+                                                         "Theese dwarves are masters of metalworking "+
+                                                         Environment.NewLine;
+
+                        UpdateStatValue(priStatOutputLabel,2);
 
                         clan2RadioButton.Enabled = false;
                         clan3RadioButton.Enabled = false;
                     }
                     if (clan2RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "Wildhammer bio " + "+ 1 Combat" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "Wildhammer" + Environment.NewLine+
+                                                         "These dwarves are more attuned to elements"+
+                                                         Environment.NewLine;
+
+                        UpdateStatValue(secStat4OutputLabel, 2);
+
 
                         clan1RadioButton.Enabled = false;
                         clan3RadioButton.Enabled = false;
                     }
                     if (clan3RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "Dark Iron bio " + "+ 1 Dark Magic, - 1 Repuation" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "Dark Iron"+ Environment.NewLine+
+                                                         "These dwarves were exiled from society for their traditions"
+                                                         +Environment.NewLine;
+
+                        UpdateStatValue(priStat3OutputLabel, 2);
 
                         clan1RadioButton.Enabled = false;
                         clan2RadioButton.Enabled = false;
@@ -453,21 +466,34 @@ namespace CsharpPractice
                 {
                     if (clan1RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "Dark bio " + "+ 1 Stealth" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "Dark"+ Environment.NewLine+
+                                                         "These elves are isolationists, and pious "+
+                                                         "but also capable of immense stealth and nature might."+
+                                                         Environment.NewLine;
+
+                        UpdateStatValue(priStat2OutputLabel,2);
 
                         clan2RadioButton.Enabled = false;
                         clan3RadioButton.Enabled = false;
                     }
                     if (clan2RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "High bio " + "+ 1 Intellect" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "High"+ Environment.NewLine+
+                                                         "These elves are magically augmented by their power source "+
+                                                         "the sunwell. Civillized, capable, and wise."+
+                                                         Environment.NewLine;
+
+                        UpdateStatValue(priStat3OutputLabel,2);
 
                         clan1RadioButton.Enabled = false;
                         clan3RadioButton.Enabled = false;
                     }
                     if (clan3RadioButton.Checked)
                     {
-                        characterStatOutputLabel.Text += "Blood bio " + "+ 2 Zeal" + Environment.NewLine;
+                        characterStatOutputLabel.Text += "Blood"+ Environment.NewLine+
+                                                         "These elves are the surviors of a pseudo-ethnic purge "+
+                                                         "Deprived of their magical fount, they hunger for a replacement "+
+                                                         "source of magic to sate their hunger. " +Environment.NewLine;
 
                         clan1RadioButton.Enabled = false;
                         clan2RadioButton.Enabled = false;
