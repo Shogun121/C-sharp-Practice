@@ -36,8 +36,8 @@ namespace CsharpPractice
         private void CSsharpPracticeForm_Load(object sender, EventArgs e)
         {
             //Display message to users stating the purpose of the application.
-            MessageBox.Show("Welcome to the Character Creator!","Character Creation Setup" + Environment.NewLine +
-                            "Here you can create a completely tailored character");
+            MessageBox.Show("Welcome to the Character Creator!" + Environment.NewLine +
+                            "Here you can create a completely tailored character", "Character Creation Setup");
             //reset description string
             characterStatOutputLabel.Text = "";
             //Reset all of the radio buttons to runtime.
@@ -508,15 +508,28 @@ namespace CsharpPractice
             {
                 if (upbringing1RadioButton.Checked)
                 {
-                    characterStatOutputLabel.Text += "Affluence bio " + "+100g, + 1 Elegence";
-                }
+                    characterStatOutputLabel.Text += "Affluence" + Environment.NewLine+
+                                                     "These individuals have been raised in wealth and "+
+                                                     "prosperity. Given access to the best there is to be had. "+
+                                                     "This means they are well versed, and capable,... most of the time."+
+                                                     Environment.NewLine;
+
+                    UpdateStatValue(priStatOutputLabel,1);
+                    UpdateStatValue(priStat2OutputLabel, 1);
+                    UpdateStatValue(priStat3OutputLabel, 1);
+            }
             }
 
         private void upbringing2RadioButton_CheckedChanged(object sender, EventArgs e)
             {
                 if (upbringing1RadioButton.Checked)
                 {
-                    characterStatOutputLabel.Text += "Working class bio " + " + 1 Strength, + 1 Respect";
+                characterStatOutputLabel.Text += "Working Class" + Environment.NewLine +
+                                                 "These individuals have spent their lives working sun " +
+                                                 "up to sun down earning their days bread. They are in shape, "+
+                                                 "determined, and willing to do the dirty work" +Environment.NewLine;
+
+                    UpdateStatValue(priStat4OutputLabel,5);
                 }
             }
 
@@ -524,7 +537,12 @@ namespace CsharpPractice
             {
                 if (upbringing1RadioButton.Checked)
                 {
-                    characterStatOutputLabel.Text += "Poverty bio " + " + 1 Humility, - 1 Repuation";
+                    characterStatOutputLabel.Text += "Poverty"+Environment.NewLine+
+                                                     "These people have grown up without much of anything "+
+                                                     "They are however, unwavering in their resolve. "+
+                                                     Environment.NewLine;
+
+                    UpdateStatValue(secStatOutputLabel,5);
                 }
             }
         /// <summary>
@@ -570,11 +588,6 @@ namespace CsharpPractice
  * TO DO
  * 1)Clean up
  * 2)Develope Creation choices, be more orginal.
- * 3)Format output display
- *  i.e Human gets +2 Spirit.
- * 4)Add stat column to display stat changes, but also to allow stat rolls.
- * 5)Maybe add pictureboxes for when radiobuttons are checked.
- * 6)Comment
  * 7)Code Clear() to reset program to Load status
  * 8)Debug
  * 9)Fix bug with display Clan 2 and 3 for Human.
@@ -582,4 +595,7 @@ namespace CsharpPractice
  * TO IMRPOVE
  * 1)Modularize
  * 2)Make more efficient
+ * 4)Add stat column to display stat changes, but also to allow stat rolls.
+ * 5)Maybe add pictureboxes for when radiobuttons are checked.
+ * 6)Comment
  * */
