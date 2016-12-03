@@ -24,9 +24,13 @@ namespace CsharpPractice
         /// <param name="e"></param>
         private void exitButton_Click(object sender, EventArgs e)
         {
-            //TODO :Add a Y/N decision dialog box for saftey.
-            MessageBox.Show("Character was not created.","Character Creation Exit");
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit?",
+                "Exit Confirmation", MessageBoxButtons.YesNo);
+            if(dialogResult==DialogResult.Yes)
+            {
+                MessageBox.Show("Character was not created.", "Character Creation Exit");
+                this.Close();
+            }
         }
         /// <summary>
         /// The method being called on Form load
@@ -332,6 +336,7 @@ namespace CsharpPractice
             if (upbringing1RadioButton.Checked || upbringing2RadioButton.Checked || upbringing3RadioButton.Checked)
             {
                 MessageBox.Show("Character Creation is Complete.","Character Creation");
+                upbringingGroupBox.Enabled = false;
             }
         }
             /// <summary>
@@ -522,7 +527,7 @@ namespace CsharpPractice
 
         private void upbringing2RadioButton_CheckedChanged(object sender, EventArgs e)
             {
-                if (upbringing1RadioButton.Checked)
+                if (upbringing2RadioButton.Checked)
                 {
                 characterStatOutputLabel.Text += "Working Class" + Environment.NewLine +
                                                  "These individuals have spent their lives working sun " +
@@ -535,7 +540,7 @@ namespace CsharpPractice
 
         private void upbringing3RadioButton_CheckedChanged(object sender, EventArgs e)
             {
-                if (upbringing1RadioButton.Checked)
+                if (upbringing3RadioButton.Checked)
                 {
                     characterStatOutputLabel.Text += "Poverty"+Environment.NewLine+
                                                      "These people have grown up without much of anything "+
@@ -553,10 +558,18 @@ namespace CsharpPractice
         /// <param name="Number">The stat amount needing to be set</param>
         private void UpdateStatValue(Label Label, int Number)
         {
-            //Parse the old stat amount and roll it into the new amount(totl=old+new)
-            Number += int.Parse(Label.Text);
-            //Update the Label's text with the current stat amount.
-            Label.Text = Number.ToString();
+            try
+            {
+                //Parse the old stat amount and roll it into the new amount(totl=old+new)
+                Number += int.Parse(Label.Text);
+                //Update the Label's text with the current stat amount.
+                Label.Text = Number.ToString();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("The value "+Number+" was invalid.","Stat Update Error");
+            }
+            
         }
         /// <summary>
         /// Method to clear the stats when a char is cleared/start-up occurs.
@@ -589,13 +602,13 @@ namespace CsharpPractice
  * 1)Clean up
  * 2)Develope Creation choices, be more orginal.
  * 7)Code Clear() to reset program to Load status
- * 8)Debug
  * 9)Fix bug with display Clan 2 and 3 for Human.
  * 
  * TO IMRPOVE
- * 1)Modularize
- * 2)Make more efficient
- * 4)Add stat column to display stat changes, but also to allow stat rolls.
+ * 1)Modularize/Improve
+ * 3)Add a Y/N decision dialog box for saftey.
+ * 4)Allow stat rolls.
  * 5)Maybe add pictureboxes for when radiobuttons are checked.
- * 6)Comment
+ * 6)Debug
+ * 7)Comment
  * */
